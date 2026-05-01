@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* custom classes */
+
+/* Re-usable custom classes */
+.header-fs {
+    font-size: clamp(0.5rem, min(10vw, 20vh), 1.5rem);
+}
+.header-p-fs {
+    font-size: clamp(0.5rem, min(10vw, 20vh), 1.2rem);
+}
+.header-span-fs {
+    font-size: clamp(0.5rem, min(10vw, 20vh), 1.2rem);
+}
+
+/* final winner */
+.finalWinner{
+    font-size: clamp(0.5rem, min(10vw, 20vh), 2.5rem);
+    color: red;
+    text-shadow: 0 0 20px #4ade80;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: center;
+    animation: showWinner 1s ease-in-out forwards;
+}
+
+/* winner  */
+.winner {
+    background-color: #4ade80;
+    color: white;
+}
+
+/* border radius */
+.borderRadius {
+    border-radius: 50%;
+    width: clamp(50px, min(50vw, 60vh), 600px);
+    height: clamp(50px, min(50vw, 60vh), 600px);
+}
+/* border Radius for after for all small screens */
+.borderRF::after {
+    width: clamp(50px, min(37vw, 50vh), 597px);
+    height: clamp(50px, min(48vw, 50vh), 597px);
+    border-radius: 50%;
+}
+
+/* custom font size reset and end button (fs >> startbtn) (fs2 >> endbtn) */
+.fs {
+    font-size: clamp(0.1rem, min(4vw, 5vh), 1.5rem);
+    transition: all 0.3s ease-in-out;
+}
+
+.fs:focus, .fs:active .fs:hover {
+    font-size: clamp(0.1rem, min(10vw, 20vh), 1.2rem);
+}
+.fs2 {
+    font-size: clamp(0.1rem, min(2.5vw, 2.5vh), 1.5rem);
+    transition: all 0.3s ease-in-out;
+}
+
+.fs2:focus, .fs2:active .fs2:hover {
+    font-size: clamp(0.1rem, min(3.5vw, 4vh), 1.2rem);
+}
+
+/* custom animations */
+@keyframes showWinner {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: center;
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+      transform-origin: center;
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      transform-origin: center;
+    }
+  }
+
+  /* media queries after button for nest hub */
+
+  @media screen and (min-width: 1024px) and (max-width: 1024px)
+  and (min-height: 550px) and (max-height: 650px)
+   {
+    .borderRF::after {
+    width: clamp(50px, min(50vw, 58vh), 597px);
+    height: clamp(50px, min(50vw, 58vh), 597px);
+  }
+  }
+
+  /* for all biggest screens */
+  @media screen and (min-width: 1280px){
+    .borderRF::after {
+    width: clamp(50px, min(50vw, 58vh), 597px);
+    height: clamp(50px, min(50vw, 58vh), 597px);
+ }
+  }
